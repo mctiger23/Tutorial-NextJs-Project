@@ -1,7 +1,13 @@
 import React from 'react'
-import properties from '@/properties.json'
+// import properties from '@/properties.json'
 import PropertyCard from '@/components/PropertyCard';
-const PropertiesPage = () => {
+import { fetchProperties } from '@/utils/requests';
+
+const PropertiesPage = async () => {
+  const properties = await fetchProperties();
+
+  // Sort Properties by date 
+  properties.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
   return (
     // {/* <!-- Recent Properties --> */}
     <section className="px-4 py-6">
