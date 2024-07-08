@@ -25,7 +25,7 @@ function NotFoundPage() {
           </div>
         </div>
       </div>
-      <div class="flex-grow"></div>
+      <div className="flex-grow"></div>
     </section>
   );
 }

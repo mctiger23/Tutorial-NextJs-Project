@@ -8,18 +8,23 @@ import PropertyDetails from '@/components/PropertyDetails';
 import {FaArrowLeft } from 'react-icons/fa'
 import Spinner from '@/components/Spinner';
 import PropertyImages from '@/components/PropertyImages';
+import { toast } from 'react-toastify'
 
 const PropertyPage = () => {
   const { id } = useParams();
 
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [newProperty, setNewProperty] = useState(false)
+
   useEffect(() => {
     const fetchPropertyData = async () => {
       if (!id) return;
       try {
         const property = await fetchProperty(id);
         setProperty(property);
+        // popup toast if new property is added 
+        
       } catch (error) {
         console.error("Error fetching property:", error);
       } finally {

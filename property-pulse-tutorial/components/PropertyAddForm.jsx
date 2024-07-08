@@ -93,9 +93,6 @@ const PropertyAddForm = () => {
         }));
      }
 
-     
-
-
     return (
       mounted && (
         <form
@@ -541,10 +538,10 @@ const PropertyAddForm = () => {
             <input
               type="text"
               id="seller_name"
-              name="seller_info.name."
+              name="seller_info.name"
               className="border rounded w-full py-2 px-3"
               placeholder="Name"
-              rates={fields.seller_info.name}
+              value={fields.seller_info.name}
               onChange={handleChange}
             />
           </div>
@@ -561,7 +558,7 @@ const PropertyAddForm = () => {
               name="seller_info.email"
               className="border rounded w-full py-2 px-3"
               placeholder="Email address"
-              rates={fields.seller_info.email}
+              value={fields.seller_info.email}
               onChange={handleChange}
               required
             />
@@ -579,7 +576,7 @@ const PropertyAddForm = () => {
               name="seller_info.phone"
               className="border rounded w-full py-2 px-3"
               placeholder="Phone"
-              rates={fields.seller_info.phone}
+              value={fields.seller_info.phone}
               onChange={handleChange}
             />
           </div>

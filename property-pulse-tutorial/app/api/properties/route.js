@@ -62,11 +62,10 @@ export const POST = async(request) => {
           seller_info: {
             name: formData.get("seller_info.name"),
             email: formData.get("seller_info.email"),
-            phones: formData.get("seller_info.phone"),
+            phone: formData.get("seller_info.phone"),
           },
           owner: userId,
         };
-
         // Upload Images to Cloudinary
         const imageUploadPromises = []; 
         for (const image of images){
@@ -93,7 +92,6 @@ export const POST = async(request) => {
 
         const newProperty = new Property(propertyData);
         await newProperty.save(); 
-
         return Response.redirect(`${process.env.NEXTAUTH_URL}/properties/${newProperty._id}`)
         console.log(propertyData)
         // return new Response(JSON.stringify({message: 'Success'}), {status: 200})
