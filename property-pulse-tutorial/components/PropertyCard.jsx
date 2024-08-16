@@ -18,9 +18,10 @@ const PropertyCard = ({property}) => {
       <Image
         src={property.images[0]}
         alt=""
-        height={1000}
-        width={1000}
-        className="object-cover rounded-t-xl"
+        height={0}
+        width={0}
+        sizes="100vw"
+        className="w-full h-auto rounded-t-xl"
       />
       <div className="p-4">
         <div className="text-left md:text-center lg:text-left mb-6">
